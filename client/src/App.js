@@ -1,29 +1,26 @@
-// import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Login from './components/Login';
-import Register from './components/Register';
-import NotFound from './components/NotFound';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import NotFound from "./components/NotFound";
 
-import './App.css';
+import "./App.css";
 
 const App = () => (
-  <div className = "App"> 
-    <Register />     
+  <div className="App">
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/" element={<Register />} />
+        <Route exact path="/not-found" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+    ;
   </div>
-)
+);
 
-
-// <Login/>
+//<Register />
 
 // <NotFound />
 
-// <BrowserRouter>
-//       <Switch>
-//         <Route exact path="/login" component={Login} />
-//         <Route exact path="/register" component={Register} />
-//         <Route exact path="/not-found" component={NotFound} />
-//         <Redirect to="/not-found" />
-//       </Switch>
-//     </BrowserRouter>
-
-export default App
+export default App;
